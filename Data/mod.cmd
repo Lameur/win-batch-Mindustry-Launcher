@@ -1,7 +1,6 @@
 @echo off
 echo backup mods...
 ping localhost > nul
-pushd ..
 set l=%CD%
 set l=%l%\mods_backup
 set mod_folder=%APPDATA%\Mindustry\mods

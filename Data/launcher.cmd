@@ -5,15 +5,13 @@ if exist run (goto installed) else (goto install)
 :install
 echo Welcome to Mindustry, I will install it for you, then you can play.
 pushd ..
-del first_launch.cmd
+del "- first_launch.cmd"
 pushd Data
 echo downloading Mindustry...
-call ghrel.exe jreisinger/ghrel
 call ghrel.exe Anuken/MindustryBuilds
 call ghrel.exe Anuken/Mindustry
 echo Mindustry was downloaded !
 echo. > run
-goto installed
 
 :installed
 if %1==-B goto run_Mindustry_Beta
