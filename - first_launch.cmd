@@ -12,7 +12,7 @@ echo now, you may execute the launcher !!!
 ping localhost > nul
 
 pushd Data
-call launcher.cmd
+start launcher.cmd
 pushd ..
 
 del "- first_launch.cmd" | exit /B
