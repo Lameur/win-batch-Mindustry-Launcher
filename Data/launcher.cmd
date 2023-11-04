@@ -2,23 +2,19 @@
 cls
 if exist run (goto installed) else (goto install)
 
-
 :install
 echo Welcome to Mindustry, I will install it for you, then you can play.
-pushd ..
-del "- first_launch.cmd"
-pushd Data
+cd ..
+cd Data
 echo downloading Mindustry...
 call ghrel.exe Anuken/MindustryBuilds
 call ghrel.exe Anuken/Mindustry
 echo Mindustry was downloaded !
 echo. > run
 
-#pre chose
-if %1==-B goto release
-if %1==-R goto beta
-
 :installed
+if "$%1"=="$-B" GOTO release
+if "$%1"=="$-R" GOTO beta
 echo what version of Mindustry you want launch ?
 set /P Lr="the Release ver (R) or the Beta ver (B) : "
 if /I %Lr%==R goto release

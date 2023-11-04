@@ -1,18 +1,20 @@
 @echo off
 title initialise Mindustry...
 
-pushd Data
+cd "%~dp0Data"
+if exist run del run
+attrib +R +S +H launcher.cmd
 call reg.cmd
-pushd ..
+cd ..
 
-attrib +H "%~dp0update_shortcut (Do not execute this, it will break all).ps1"
-attrib +H "%~dp0Data" /D
+attrib +H "%~dp0update_shortcut.ps1"
+attrib +R +H "%~dp0Data" /D
 
-echo now, you may execute the launcher !!!
+echo.
+echo execute the launcher...
 ping localhost > nul
 
-cd Data
+cd "%~dp0Data"
 start launcher.cmd
-pushd ..
-
+cd ..
 del "- first_launch.cmd" | exit /B
