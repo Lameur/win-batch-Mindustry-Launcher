@@ -11,7 +11,7 @@ attrib +H "%~dp0Data" /D
 echo now, you may execute the launcher !!!
 ping localhost > nul
 
-pushd Data
+cd Data
 start launcher.cmd
 pushd ..
 
